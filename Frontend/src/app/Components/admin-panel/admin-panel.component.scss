@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+  .card {
+    border-radius: 10px;
+    margin-top: 50px;
+  }
+  
+  .form-label {
+    font-weight: 500;
+  }
+  
+  .tag-input {
+    margin-bottom: 15px;
+  }
+  
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .tag-list li {
+    background-color: #007bff;
+    color: white;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin: 5px;
+  }
+  
+  .tag-list li .remove-tag {
+    margin-left: 8px;
+    cursor: pointer;
+  }
+  

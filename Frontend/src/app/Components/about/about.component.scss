@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.container-fluid {
+  background-color: rgb(181, 186, 190);
+    padding: 0;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #243852;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+}
+
+.hero-section p {
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+}
+
+/* Mission Section */
+.mission-section {
+    padding: 60px 0;
+}
+
+.mission-section h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #243852;
+}
+
+.mission-section p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* Team Section */
+.team-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.team-section h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #243852;
+}
+
+.team-section img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.team-section h5 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 15px;
+    color: #243852;
+}
+
+.team-section p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #6c757d;
+}
+
+/* Offer Section */
+.offer-section {
+    padding: 60px 0;
+}
+
+.offer-section h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #243852;
+    margin-bottom: 40px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #243852;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #6c757d;
+}
+
+/* Call to Action Section */
+.cta-section {
+    background-color: #495867;
+    padding: 40px 0;
+}
+
+.cta-section h2 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.cta-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta-section .btn-lg {
+    font-size: 18px;
+    padding: 10px 30px;
+}
+.btn{
+    background-color: #243852;
+    color: white;
+}
+.btn:hover{
+    color: rgb(0, 0, 0);
+    background-color: #75879e;
+}
+
+/* Footer */
+.footer {
+    background-color: #343a40;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+}

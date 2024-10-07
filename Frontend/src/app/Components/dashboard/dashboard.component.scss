@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+.container-fluid {
+    background-color: #aebed4;
+    padding: 0;
+    height: 100vh;
+}
+
+.display-4 {
+    margin-top: 70px;
+}
+.menus{
+    padding-right: 20px;
+}
+.form-control {
+    border-radius: 10px;
+    width: 350px;
+    background-color: transparent;
+}
+
+li{
+    cursor: pointer;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 17px;
+}
+.nav2{
+    width: 500px;
+}
+
+header {
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+}
+
+.head-container {
+    justify-content: center;
+    padding-left: 195px;
+}
+
+.btn-warning {
+    color: #ffffff;
+    background-color: #2b5973;
+    border-color: #2b5973;
+}
+
+.btn-outline-warning {
+    color: #2b5973;
+    border-color: #2b5973;
+}
+
+.logo {
+    border: 2px solid #243852;
+    display: flex;
+    width: 134px;
+    justify-content: center;
+    align-items: center;
+    height: 52px;
+    border-radius: 15px;
+    position: absolute;
+    left: 10px;
+}
+
+.net {
+    background-color: #243852;
+    border-radius: 10px;
+    align-content: center;
+    text-align: center;
+    height: 40px;
+    width: 60px;
+    font-size: 20px;
+}
+
+.learn {
+    font-size: 20px;
+    font-weight: 600;
+    color: #243852;
+}
+
+main{
+    padding-top: 75px;
+}
+.sidebar {
+    position: fixed;
+    background-color: #243852;
+    height: 100vh;
+    padding-top: 74px;
+}
+
+.sidebar .nav-link {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #495867;
+    border-radius: 5px;
+}
+
+.sidebar .nav-link.active {
+    background-color: #495867;
+    border-radius: 5px;
+}
+
+h1.h2 {
+    font-weight: 500;
+    font-size: 24px;
+    color:  #15304b;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #243852;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.table th, .table td {
+    text-align: center;
+}
+
+.table th {
+    color: #243852;
+}
+
+.table td {
+    font-weight: 500;
+}
+
+
+/* Responsive Design for mobile and tablet views */
+@media (max-width: 768px) {
+    .head-container {
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    .logo {
+        display: flex; /* Ensure logo is visible */
+        position: static; /* Center logo on mobile view */
+        margin-bottom: 10px;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    .nav2 {
+        display: none;
+    }
+
+    .btn-outline-warning, .btn-warning {
+        margin-top: 10px;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+    }
+
+    main {
+        margin-left: 0;
+        padding-top: 100px; /* Adjust for header */
+    }
+}

@@ -1,0 +1,107 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+<div class="container-fluid">
+    <header class="p-3 text-white headpart">
+        <div class="container head-container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center ">
+                
+                <div class="logo">
+                    <div class="net">NET</div>
+                    <div class="learn">LEARN</div>
+                </div>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0">
+                    <li><a href="#home" class="nav-link px-2 text-dark">Home</a></li>
+                    <li *ngIf="profileData.role==='admin' "><a routerLink="/TheAdmin"
+                            class="nav-link px-2 text-dark">Admin</a></li>
+                    <li><a href="" class="nav-link px-2 text-dark">Courses</a></li>
+                    <li><a href="#about" class="nav-link px-2 text-dark">About</a></li>
+                    <li><a href="#contact" class="nav-link px-2 text-dark">Contact</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                    <input type="search" class="form-control form-control-dark" placeholder="Search..."
+                        aria-label="Search">
+                </form>
+                <div class="profile-name" (click)="userDropdown()">{{userName}}</div>
+                
+
+                <div class="profile" (click)="userDropdown()"><img src="../../../assets/user.png" alt="">
+                    <div class="user-dropdown-menu" [ngClass]="{'show-dropdown': userDropDownVisible}">
+                        <div class="imgemail">
+                            <div class="user-img"><img src="../../../assets/user.png" alt=""></div>
+                            <div class="useremail">{{profileData.Email}}</div>
+                            <div class="role">{{profileData.role}}</div>
+                        </div>
+                        <span class="logout" (click)="navigateToSignIn()"><span><img src="../../../assets/logout.png"
+                                    alt=""></span>Sign Out</span>
+                    </div>
+                </div>
+                <div class="div-end"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Welcome to NETLEARN</h1>
+            <p class="lead">Learn anytime, anywhere with our wide variety of courses designed for all learners.</p>
+            <a class="btn learning-btn  btn-lg">Start Learning Now</a>
+        </div>
+    </section>
+
+    <!-- allCourses selector -->
+    <app-course></app-course>
+
+    <!-- Enrolled Courses -->
+    <!-- <div class="container mt-5">
+    <h2>Enrolled Courses</h2>
+    <div *ngFor="let enrolledCourse of enrolledCourses">
+        <h4>{{ enrolledCourse.title }}</h4>
+        <button class="btn btn-success" (click)="learnCourse(enrolledCourse.id)">Learn</button>
+    </div>
+</div>
+ -->
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">--What Our Learners Say--</h2>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <blockquote class="blockquote">
+                        <p class="text-light">"This platform has changed the way I learn. It's so convenient and
+                            informative!"</p>
+                        <footer class="blockquote-footer">Debadutta</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-4 text-center">
+                    <blockquote class="blockquote">
+                        <p class="text-light">"The courses are easy to follow, and I can study at my own pace."</p>
+                        <footer class="blockquote-footer">Soumya Ranjan</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-4 text-center">
+                    <blockquote class="blockquote">
+                        <p class="text-light">"I've gained so much knowledge and applied it in my career."</p>
+                        <footer class="blockquote-footer">Divya Ranjan</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <app-about id="about"></app-about>
+    <app-contact id="contact"></app-contact>
+    <!-- Footer Section -->
+    <footer class="py-4 bg-dark text-white text-center">
+        <p>&copy; 2024 NETLEARN. All rights reserved.</p>
+    </footer>
+
+</div>

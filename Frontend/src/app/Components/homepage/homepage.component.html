@@ -1,0 +1,129 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+<div class="container-fluid">
+    <header class="p-3 text-white headpart">
+        <div class="container head-container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center ">
+                <!-- <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+            </a> -->
+
+                <div class="logo">
+                    <div class="net">NET</div>
+                    <div class="learn">LEARN</div>
+                </div>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0">
+                    <li><a href="#home" class="nav-link px-2 text-dark">Home</a></li>
+                    <!-- <li><div href="#" class="nav-link px-2 text-dark" (click)="navigateToDashboard()">Dashboard</div></li> -->
+                    <li><a href="#course" class="nav-link px-2 text-dark">Courses</a></li>
+                    <li><a href="#about" class="nav-link px-2 text-dark">About</a></li>
+                    <li><a href="#contact" class="nav-link px-2 text-dark">Contact</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                    <input type="search" class="form-control form-control-dark" placeholder="Search..."
+                        aria-label="Search">
+                </form>
+
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-warning me-2"
+                        (click)="navigateToLogIn()">Login</button>
+                    <button type="button" class="btn btn-warning" (click)="navigateToSignUp()">Sign-up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Welcome to NETLEARN</h1>
+            <p class="lead">Learn anytime, anywhere with our wide variety of courses designed for all learners.</p>
+            <a href="#" class="btn learning-btn  btn-lg">Start Learning Now</a>
+        </div>
+    </section>
+
+    <!-- Popular Courses Section -->
+    <section id="course" class="courses-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Popular Courses</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../../../assets/764164_de03_5.jpg" class="card-img-top" alt="Course 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Complete Web dev course</h5>
+                            <p class="card-text">Become a Full-Stack Web Developer with just ONE course. HTML, CSS,
+                                Javascript, Node, React, PostgreSQL, Web3 and DApps</p>
+                            <a  class="btn btn-primary" (click)="checkLogin()">Let's Learn</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../../../assets/1565838_e54e_18.jpg" class="card-img-top" alt="Course 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Complete Javascript course</h5>
+                            <p class="card-text">Learn Web Development in 2024! Build apps, website, projects using
+                                HTML, CSS, Javascript, PHP, Python, MySQL &amp; more!</p>
+                            <a  class="btn btn-primary" (click)="checkLogin()">Let's Learn</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../../../assets/6035102_7d1a.jpg" class="card-img-top" alt="Course 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Complete web development course</h5>
+                            <p class="card-text">Only web development course that you will need. Covers HTML, CSS,
+                                Tailwind, Node, React, MongoDB, Prisma, Deployment etc</p>
+                            <a  class="btn btn-primary" (click)="checkLogin()">Let's Learn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">--What Our Learners Say--</h2>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <blockquote class="blockquote">
+                        <p class="text-light">"This platform has changed the way I learn. It's so convenient and
+                            informative!"</p>
+                        <footer class="blockquote-footer">Debadutta</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-4 text-center">
+                    <blockquote class="blockquote">
+                        <p class="text-light">"The courses are easy to follow, and I can study at my own pace."</p>
+                        <footer class="blockquote-footer">Soumya Ranjan</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-4 text-center">
+                    <blockquote class="blockquote">
+                        <p class="text-light">"I've gained so much knowledge and applied it in my career."</p>
+                        <footer class="blockquote-footer">Divya Ranjan</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <app-about id="about"></app-about>
+    <app-contact id="contact"></app-contact>
+    <!-- Footer Section -->
+    <footer class="py-4 bg-dark text-white text-center">
+        <p>&copy; 2024 NETLEARN. All rights reserved.</p>
+    </footer>
+
+</div>

@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    font-family: Roboto;
+}
+
+.container-fluid {
+    height: 100vh;
+    opacity: 0.9;
+    background-image: url(../../../assets/bg.jpg);
+    background-repeat: no-repeat;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 22px;
+}
+
+.head-container {
+    justify-content: center;
+    padding-left: 195px;
+}
+
+.logo {
+    border: 2px solid #243852;
+    display: flex;
+    width: 134px;
+    justify-content: center;
+    align-items: center;
+    height: 52px;
+    border-radius: 15px;
+    position: absolute;
+    left: 10px;
+}
+
+.net {
+    background-color: #243852;
+    border-radius: 10px;
+    align-content: center;
+    text-align: center;
+    height: 40px;
+    width: 60px;
+    font-size: 20px;
+}
+
+.learn {
+    font-size: 20px;
+    font-weight: 600;
+    color: #243852;
+}
+
+.card {
+    width: 400px;
+    background-color: rgba(119, 153, 157, 0.418);
+    border-radius: 15px;
+    box-shadow: 0px 0px 54px 0px rgba(0, 0, 0, 0.75);
+}
+
+.heading {
+    color: black;
+}
+
+label {
+    font-weight: 500;
+    font-size: 17px;
+    color: black;
+}
+
+.input {
+    font-size: 15px;
+    height: 40px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid rgb(64, 112, 201);
+    font-weight: 500;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.771);
+    font-weight: 300;
+}
+
+.input:hover {
+    border: 1px solid rgb(0, 89, 255);
+    border-radius: 10px;
+}
+
+.input:focus {
+    border: 1px solid rgb(0, 89, 255);
+    border-radius: 10px;
+}
+
+.button-div {
+    width: 100%;
+}
+
+button {
+    width: 70px;
+    border: none;
+    border-radius: 8px;
+    height: 35px;
+    background-color: rgb(64, 112, 201);
+    color: white;
+    font-weight: 300;
+}
+
+button:hover {
+    border-radius: 8px;
+    background-color: rgb(0, 89, 255);
+}
+
+button:focus {
+    border-radius: 8px;
+    background-color: rgb(0, 89, 255);
+}
+
+.Account{
+    color: white;
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(255, 251, 0);
+    font-weight: 600;
+}
+
+.link:hover {
+    font-weight: 500;
+    color: rgb(4, 0, 255);
+}

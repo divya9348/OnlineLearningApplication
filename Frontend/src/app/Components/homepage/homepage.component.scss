@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+.container-fluid {
+   background-image: url(../../../assets/bg.jpg);
+   background-repeat: no-repeat;
+    height: 150vh;
+    padding: 0;
+}
+.display-4 {
+    margin-top: 70px;
+}
+h2{
+    color: white;
+}
+.form-control {
+    border-radius: 10px;
+    width: 350px;
+    background-color: transparent;
+}
+li{
+    cursor: pointer;
+}
+.nav{
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 17px;
+}
+header{
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+  
+}
+.head-container{
+    justify-content: center;
+    padding-left: 195px;
+}
+.btn-warning {
+    color: #ffffff;
+    background-color: #2b5973;
+    border-color: #2b5973;
+}
+
+.btn-outline-warning {
+    color: #2b5973;
+    border-color: #2b5973;
+}
+.learning-btn{
+    background-color: #243852;
+    color: white;
+}
+.learning-btn:hover{
+    background-color:  #3b495b;
+    color: rgb(163, 163, 163);
+}
+.hero-section {
+    background-color: #49627bbc;
+    padding: 80px 0;
+}
+.bg-light {
+    background-color: #62707e73 !important;
+}
+.lead{
+    margin-bottom: 10px;
+}
+.courses-section {
+    padding: 60px 0;
+}
+
+.testimonials-section {
+    background-color:  #62707e73;
+}
+
+footer {
+    background-color: #343a40;
+    padding: 20px;
+}
+
+.logo {
+    border: 2px solid #243852;
+    display: flex;
+    width: 134px;
+    justify-content: center;
+    align-items: center;
+    height: 52px;
+    border-radius: 15px;
+    position: absolute;
+    left: 10px;
+}
+
+.net {
+    background-color: #243852;
+    border-radius: 10px;
+    align-content: center;
+    text-align: center;
+    height: 40px;
+    width: 60px;
+    font-size: 20px;
+}
+
+.learn {
+font-size: 20px;
+    font-weight: 600;
+    color: #243852;
+
+}
+.card img {
+    border-radius: 15px 15px 0 0;
+}
+
+blockquote {
+  
+    font-size: 18px;
+    font-style: italic;
+}
+.blockquote-footer{
+    margin-top: 5px;
+}
