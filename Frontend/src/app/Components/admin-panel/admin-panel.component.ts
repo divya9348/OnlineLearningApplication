@@ -55,7 +55,6 @@ selectedImage:File |null=null;
 
   ngOnInit(): void {
     this.loadCourses();
-    this.getEnrolledCourse();
   }
 
   courses: any[] = [];  // List of available courses
@@ -65,18 +64,6 @@ selectedImage:File |null=null;
     this.netLearn.getAllCourse().subscribe(
       (response) => {
         this.courses = response.data; // Assign the response to courses array
-      },
-      (error) => {
-        console.error("Error loading courses", error);
-        this.toastr.error("Failed to load courses");
-      }
-    );
-  }
-
-  getEnrolledCourse() {
-    this.netLearn.getEnrolledCourses().subscribe(
-      (response) => {
-        this.enrolledCourses = response.enrolledCourses;
       },
       (error) => {
         console.error("Error loading courses", error);
