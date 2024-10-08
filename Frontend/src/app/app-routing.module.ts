@@ -11,9 +11,10 @@ import { ContactComponent } from './Components/contact/contact.component';
 import { AfterLoginComponent } from './Components/after-login/after-login.component';
 import { LearnCourseComponent } from './Components/learn-course/learn-course.component';
 import { AdminPanelComponent } from './Components/admin-panel/admin-panel.component';
+import { authGuardGuard } from './Guard/auth-guard.guard';
 
 const routes: Routes = [
-  {path:"", component:HomepageComponent},  //homepage route...
+  {path:"ho", component:HomepageComponent},  //homepage route...
   {path:"course",component:CourseComponent},
   { path: 'learn/:courseId', component: LearnCourseComponent },
   {path:'TheAdmin',component:AdminPanelComponent},
@@ -22,7 +23,7 @@ const routes: Routes = [
   {path:"contact",component:ContactComponent},
   {path:"signup", component:SignupComponent},
   {path:"login", component:LoginComponent},
-  {path:"authenticated", component:AfterLoginComponent },
+  {path:"authenticated", component:AfterLoginComponent,canActivate:[authGuardGuard]},
   {path:"loginotp", component:LoginOtpComponent}
 ];
 

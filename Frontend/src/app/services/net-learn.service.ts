@@ -96,4 +96,8 @@ export class NetLearnService {
     const headers = this.getToken();
     return this.http.post<any>(`${this.apiUrl}/quizes/submit/${quizId}`,data, { headers });
   }
+
+  isAuthenticated(): boolean {
+    return !!sessionStorage.getItem('token');
+  }
 }
