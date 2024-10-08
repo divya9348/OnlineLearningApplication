@@ -221,15 +221,6 @@ const getProgressForCourse = async (userId, courseId) => {
   }
 };
 
-
-
-
-
-
-// courseservice.js
-
-// const Course = require('../Models/course'); // Assuming the course model is in the models folder
-
 // Service function to search for courses in the database
 const searchCourseService = async (keyword) => {
   try {

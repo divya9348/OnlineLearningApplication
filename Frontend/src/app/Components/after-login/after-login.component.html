@@ -26,7 +26,8 @@
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                     <input type="search" class="form-control form-control-dark" placeholder="Search..."
-                        aria-label="Search" name="category" [(ngModel)]="category" (ngModelChange)="Category(category)">
+                        aria-label="Search" [(ngModel)]="searchKey"
+                        (ngModelChange)="onSearchChange($event)">
                 </form>
                 <div class="profile-name" (click)="userDropdown()">{{userName}}</div>
 
@@ -58,7 +59,7 @@
 
     <!-- allCourses selector -->
     <app-course></app-course>
-
+    
     <!-- Testimonials Section -->
     <section class="testimonials-section py-5">
         <div class="container">

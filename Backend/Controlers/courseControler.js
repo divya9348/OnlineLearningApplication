@@ -164,14 +164,11 @@ const getProgressForCourse = async (req, res) => {
   }
 };
 
-
-
-
 // Controller function to handle search requests
 const searchCourseControler = async (req, res) => {
   const keyword = req.query.q || '';  // Get search keyword from query params
   try {
-      const courses = await courseService.searchCourses(keyword);
+      const courses = await courseService.searchCourseService(keyword);
       if (courses.length === 0) {
           return res.status(404).json({ message: 'No courses found' });
       }

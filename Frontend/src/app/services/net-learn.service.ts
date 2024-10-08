@@ -53,6 +53,15 @@ export class NetLearnService {
     return this.http.get<any>(`${this.apiUrl}/courses/enrolled`, { headers });
   }
 
+
+  searchCourse(keyword: string){
+    const headers = this.getToken();
+    const params = {
+      keyword
+    }
+    return this.http.get<any>(`${this.apiUrl}/courses/search`, { params,headers });
+  }
+
   //getCourseBy Id
   getCourseById(courseId: string): Observable<any> {
     const headers = this.getToken();

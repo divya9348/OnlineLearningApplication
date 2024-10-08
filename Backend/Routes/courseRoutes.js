@@ -37,12 +37,12 @@ router.post('/unenroll/:courseId',authMiddleware.verifyToken, courseController.u
 
 router.get('/enrolled',authMiddleware.verifyToken, courseController.getUserEnrolledCourses);
 
-router.get('/:id',authMiddleware.verifyToken, courseController.getCourseById);
-
 router.post('/progress/:courseId',authMiddleware.verifyToken, courseController.updateProgress);
 
 router.get('/progress/:courseId',authMiddleware.verifyToken, courseController.getProgressForCourse);
 
 router.get('/search', courseController.searchCourseControler);
+
+router.get('/:id',authMiddleware.verifyToken, courseController.getCourseById);
 
 module.exports = router;

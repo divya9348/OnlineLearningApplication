@@ -47,7 +47,7 @@ export class AfterLoginComponent {
   getUserProfile(): void {
     this.netLearn.getUserProfile().subscribe({
       next: (res) => {
-        console.log("res:",res);
+        console.log("res:", res);
         this.userName = res.user.StudentName;
         this.profileData = res.user;
       },
@@ -57,9 +57,9 @@ export class AfterLoginComponent {
     });
   }
 
-  userDropDownVisible:boolean=false;
-  userDropdown(){
-    this.userDropDownVisible= !this.userDropDownVisible;
+  userDropDownVisible: boolean = false;
+  userDropdown() {
+    this.userDropDownVisible = !this.userDropDownVisible;
   }
 
   // Load enrolled courses
@@ -82,31 +82,28 @@ export class AfterLoginComponent {
   scrollToSection(section: string) {
     this.viewPortScroller.scrollToAnchor(section);
   }
-  
-  navigateToSignIn(){
+
+  navigateToSignIn() {
     this.router.navigate(['/login'])
   }
 
-  ToStartLearn(){
-  this.toastr.success("All Available Course Are In Below! Enroll To Access!");
+  ToStartLearn() {
+    this.toastr.success("All Available Course Are In Below! Enroll To Access!");
   }
 
-  Category(category: string) {
-    if (category) {
-      // Decode any URL encoding, just in case it's applied (like %20 for spaces)
-      const decodedCategory = decodeURIComponent(category);
-      console.log("decodedCategory:",decodedCategory)
-      this.netLearn.searchByCategory(decodedCategory).subscribe(
-        (response) => {
-          this.courses = response.courses; // Update the courses list with filtered results
-          this.toastr.success(`Courses loaded for ${decodedCategory}`);
-        },
-        (error) => {
-          console.error("Error fetching courses by category", error);
-          this.toastr.error(`Failed to load courses for ${decodedCategory}`);
-        }
-      );
-    }
+  searchKey: string = '';
+  searchCourses() {
+    this.netLearn.searchCourse(this.searchKey).subscribe(() => {
+      this.loadCourses();
+    },
+      (error: any) => {
+        this.toastr.error("Failed to load employee data", error);
+      })
+  }
+
+  onSearchChange(searchValue: string): void {
+    this.searchKey = searchValue;
+    this.searchCourses();
   }
 
 }
