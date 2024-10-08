@@ -32,14 +32,13 @@ export class NetLearnService {
   //createCourse
   createCourse(courseData:FormData): Observable<any> {
     const headers = this.getToken();
-  
     return this.http.post<any>(`${this.apiUrl}/courses/create`, courseData, { headers });
   }
 
   //getAllCourse
   getAllCourse() {
-    const headers = this.getToken();
-    return this.http.get<any>(`${this.apiUrl}/courses`, { headers });
+    // const headers = this.getToken();
+    return this.http.get<any>(`${this.apiUrl}/courses`);
   }
 
   // Enroll in a course

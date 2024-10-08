@@ -54,39 +54,17 @@
         <div class="container">
             <h2 class="text-center mb-4">Popular Courses</h2>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4"*ngFor="let course of courses">
                     <div class="card">
-                        <img src="../../../assets/764164_de03_5.jpg" class="card-img-top" alt="Course 1">
+                        <img [src]="'http://localhost:4000/'+course.image" class="card-img-top" alt="Course 1">
                         <div class="card-body">
-                            <h5 class="card-title">Complete Web dev course</h5>
-                            <p class="card-text">Become a Full-Stack Web Developer with just ONE course. HTML, CSS,
-                                Javascript, Node, React, PostgreSQL, Web3 and DApps</p>
+                            <h5 class="card-title">{{course.title}}</h5>
+                            <p class="card-text">{{course.description}}</p>
                             <a  class="btn btn-primary" (click)="checkLogin()">Let's Learn</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="../../../assets/1565838_e54e_18.jpg" class="card-img-top" alt="Course 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Complete Javascript course</h5>
-                            <p class="card-text">Learn Web Development in 2024! Build apps, website, projects using
-                                HTML, CSS, Javascript, PHP, Python, MySQL &amp; more!</p>
-                            <a  class="btn btn-primary" (click)="checkLogin()">Let's Learn</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="../../../assets/6035102_7d1a.jpg" class="card-img-top" alt="Course 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Complete web development course</h5>
-                            <p class="card-text">Only web development course that you will need. Covers HTML, CSS,
-                                Tailwind, Node, React, MongoDB, Prisma, Deployment etc</p>
-                            <a  class="btn btn-primary" (click)="checkLogin()">Let's Learn</a>
-                        </div>
-                    </div>
-                </div>
+               
             </div>
         </div>
     </section>

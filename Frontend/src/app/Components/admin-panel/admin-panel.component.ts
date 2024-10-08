@@ -13,19 +13,12 @@ export class AdminPanelComponent {
     title: '',
     description: '',
     category: '',
-    tags: '',
+    tags:  [] as string[],//[] as string[]
     tagsInput: '', // To store the raw input before splitting into array
    
   };
 selectedImage:File |null=null;
   constructor(private netLearn: NetLearnService, private toastr: ToastrService) { } // Inject the service
-
-  // Function to split tags input into an array of strings
-  // processTags() {
-  //   if (this.course.tagsInput) {
-  //     this.course.tags = this.course.tagsInput.split(',').map(tag => tag.trim()).filter(tag => tag !== '');
-  //   }
-  // }
 
   onImageSelected(event: any) {
     const file: File = event.target.files[0];
@@ -35,22 +28,15 @@ selectedImage:File |null=null;
   createCourse() {
 
     const formData = new FormData(); // Use FormData to handle both text and file data
-  
+    console.log("Taggs",this.course.tags);
     formData.append('title', this.course.title);
     formData.append('description', this.course.description);
     formData.append('category', this.course.category);
-    formData.append('tags', this.course.tags.split(',').map(tag => tag.trim()).join(',')); // Convert tags to a string
-  
+    formData.append('tags', this.course.tagsInput.split(",").map(tag => tag.trim()).join(',')); // Convert tags to a string
+    
     if (this.selectedImage) {
       formData.append('image', this.selectedImage);
     }
-    // Process tags input before submitting the form
-    // this.processTags();
-
-    // if (!this.course.title || !this.course.description || !this.course.category || this.course.tags.length === 0) {
-    //   console.log('Please fill in all fields');
-    //   return;
-    // }
 
     // Call the service method to create the course
     this.netLearn.createCourse(formData )
@@ -79,7 +65,6 @@ selectedImage:File |null=null;
     this.netLearn.getAllCourse().subscribe(
       (response) => {
         this.courses = response.data; // Assign the response to courses array
-        this.toastr.success("Load courses");
       },
       (error) => {
         console.error("Error loading courses", error);
@@ -118,7 +103,7 @@ selectedImage:File |null=null;
   }
   createLesson() {
     const lessonData = { ...this.newLesson };
-    console.log("currentCourseId", this.currentCourseId);
+    
     this.netLearn.createLesson(this.currentCourseId, lessonData).subscribe(
       (data) => {
         const courseIndex = this.courses.findIndex(course => course._id === this.currentCourseId);
@@ -127,6 +112,7 @@ selectedImage:File |null=null;
         }
         this.isAddLessonVisible = false;
         this.resetLessonForm();
+        this.toastr.success("Lesson Created Successfully!!")
       },
       (error) => {
         console.error('Failed to create lesson', error);
@@ -149,7 +135,6 @@ selectedImage:File |null=null;
   }
 
   createquizes() {
-    console.log("currentCourseId:", this.currentCourseId)
     const quizData = {
       courseId: this.currentCourseId._id,
       title: this.newQuiz.title,
@@ -164,6 +149,7 @@ selectedImage:File |null=null;
       () => {
         this.isAddQuizVisible = false;
         this.newQuiz = { title: '', questions: [{ question: '', options: '', correctAnswer: '' }] };
+        this.toastr.success("Quiz Created Successfully!!")
       },
       (error) => { console.error('Error creating quiz', error); }
     );

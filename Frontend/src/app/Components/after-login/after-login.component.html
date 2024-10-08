@@ -10,18 +10,18 @@
     <header class="p-3 text-white headpart">
         <div class="container head-container">
             <div class="d-flex flex-wrap align-items-center justify-content-center ">
-                
+
                 <div class="logo">
                     <div class="net">NET</div>
                     <div class="learn">LEARN</div>
                 </div>
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0">
-                    <li><a href="#home" class="nav-link px-2 text-dark">Home</a></li>
-                    <li *ngIf="profileData.role==='admin' "><a routerLink="/TheAdmin"
+                    <li><a routerLink="/home" class="nav-link px-2 text-dark">Home</a></li>
+                    <li *ngIf="profileData.role==='Admin' "><a routerLink="/TheAdmin"
                             class="nav-link px-2 text-dark">Admin</a></li>
-                    <li><a href="" class="nav-link px-2 text-dark">Courses</a></li>
-                    <li><a href="#about" class="nav-link px-2 text-dark">About</a></li>
-                    <li><a href="#contact" class="nav-link px-2 text-dark">Contact</a></li>
+                    <li><a routerLink="/course" class="nav-link px-2 text-dark">Courses</a></li>
+                    <li><a routerLink="/about" class="nav-link px-2 text-dark">About</a></li>
+                    <li><a routerLink="/contact" class="nav-link px-2 text-dark">Contact</a></li>
                 </ul>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -29,7 +29,7 @@
                         aria-label="Search">
                 </form>
                 <div class="profile-name" (click)="userDropdown()">{{userName}}</div>
-                
+
 
                 <div class="profile" (click)="userDropdown()"><img src="../../../assets/user.png" alt="">
                     <div class="user-dropdown-menu" [ngClass]="{'show-dropdown': userDropDownVisible}">
@@ -52,22 +52,12 @@
         <div class="container">
             <h1 class="display-4">Welcome to NETLEARN</h1>
             <p class="lead">Learn anytime, anywhere with our wide variety of courses designed for all learners.</p>
-            <a class="btn learning-btn  btn-lg">Start Learning Now</a>
+            <a class="btn learning-btn  btn-lg" (click)="ToStartLearn()">Start Learning Now</a>
         </div>
     </section>
 
     <!-- allCourses selector -->
     <app-course></app-course>
-
-    <!-- Enrolled Courses -->
-    <!-- <div class="container mt-5">
-    <h2>Enrolled Courses</h2>
-    <div *ngFor="let enrolledCourse of enrolledCourses">
-        <h4>{{ enrolledCourse.title }}</h4>
-        <button class="btn btn-success" (click)="learnCourse(enrolledCourse.id)">Learn</button>
-    </div>
-</div>
- -->
 
     <!-- Testimonials Section -->
     <section class="testimonials-section py-5">

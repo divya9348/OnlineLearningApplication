@@ -15,7 +15,7 @@ export class GoogleAuthService {
   loadGoogleScript(): void {
     window.onGoogleLibraryLoad = () => {
       google.accounts.id.initialize({
-        client_id: 'Your Client Id',
+        client_id: '824202315196-1ed63a56rq759um91imipl62phm97rk1.apps.googleusercontent.com',
         callback: this.handleCredentialResponse.bind(this),
       });
 

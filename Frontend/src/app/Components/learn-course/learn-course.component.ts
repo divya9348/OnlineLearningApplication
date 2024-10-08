@@ -28,6 +28,19 @@ courseDetails: any = {};
     this.netLearn.getCourseById(courseId).subscribe(
       (response) => {
         this.courseDetails = response.data;
+        
+        // tp show in separate block
+        if (Array.isArray(this.courseDetails.tags) && this.courseDetails.tags.length > 0) {
+          try {
+            // Remove the surrounding array and parse the string inside it
+            const tagString = this.courseDetails.tags[0].replace(/'/g, '').replace(/"/g, ''); // Removing extra quotes
+            this.courseDetails.tags = tagString.split(','); // Convert it into an array of tags
+          } catch (e) {
+            console.error('Error parsing tags:', e);
+            this.courseDetails.tags = [];
+          }
+        }
+        // 
         this.toastr.success('Course details loaded successfully');
         this.getlessonbyId();
       },
@@ -66,15 +79,39 @@ content:string='';
   }
 
   SelectedAnswers:{[key:string]:string}={}
-  submitQuiz(){
-    const answers=Object.values(this.SelectedAnswers);
-    this.netLearn.submitQuiz(this.quiz._id,{answers}).subscribe(()=>{
-      this.toastr.success("Quiz Submited Successfully");
+  submitQuiz() {
+    const answers = Object.values(this.SelectedAnswers);
+    
+    this.netLearn.submitQuiz(this.quiz._id, { answers }).subscribe((res) => {
+      console.log('res', res.data.score);
+      
+      // Set the score and total questions count
+      this.quizScore = res.data.score;
+      this.totalQuestions = this.quiz.questions.length;
+  
+      // Show the floating score window
+      this.showScore = true;
+      
+      // Show success message with Toastr
+      this.toastr.success('Quiz Submitted Successfully');
+    }, error => {
+      this.toastr.error('Error submitting quiz');
+      console.error(error);
     });
   }
-
+  
+  closeScoreWindow() {
+    this.showScore = false; // Close the floating window when button is clicked
+  }
+  
 
   selectAnswer(questionId: string, answer: string) {
     this.SelectedAnswers[questionId] = answer; // Store the selected answer for the question
   }
+
+
+  showScore: boolean = false;
+quizScore: number = 0;
+totalQuestions: number = 0;
+
 }

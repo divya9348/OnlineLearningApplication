@@ -10,7 +10,7 @@
   <!-- Course Title -->
   <div class="row">
     <div class="col-12">
-      <h1 class="course-title">{{ courseDetails.title }}</h1>
+      <h1 class="course-title">{{ courseDetails?.title }}</h1>
     </div>
   </div>
 
@@ -39,13 +39,14 @@
 
     <h1 class="head">Lessons</h1>
     <div class="lesson" *ngFor="let lesson of lessons">
-      <h2 class="lessonTitle">{{lesson.title}}</h2>
+     
+      <h2 class="lessonTitle">{{lesson?.title}}</h2>
       <div class="lessonContent">{{lesson.content}}</div>
     </div>
 
     <h1 class="quiz-head head mt-2">Quiz</h1>
-    <!-- <ol> -->
-      <div class="title">{{quiz.title}}</div>
+    
+      <div class="title">{{quiz?.title}}</div>
     <div class="quiz" *ngFor="let quiz of quizes">
      
       <div class="question" *ngFor="let question of quiz.questions; let i = index">
@@ -65,5 +66,17 @@
     </div><!-- </li> -->
     <!-- </ol> -->
      <button class="submit btn btn-primary" (click)="submitQuiz()">Submit</button>
+
+     <!-- Floating Score Modal -->
+<div *ngIf="showScore" class="floating-score-window">
+  <div class="score-content">
+    <h3>Quiz Submitted Successfully</h3>
+    <p>Your Score: {{ quizScore }}/{{ totalQuestions }}</p>
+    <button class="btn btn-success" (click)="closeScoreWindow()">Close</button>
+  </div>
+</div>
+
+<!-- Add the necessary styles for floating window and other content -->
+
   </div>
 </div>

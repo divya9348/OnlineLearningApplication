@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
 
 router.post('/create', authMiddleware.verifyToken,upload.single('image'), courseController.createCourse);
 
-router.get('/',authMiddleware.verifyToken, courseController.getCourses);
+router.get('/', courseController.getCourses);
 
 router.put('/update/:id', authMiddleware.verifyToken,  courseController.updateCourse);
 

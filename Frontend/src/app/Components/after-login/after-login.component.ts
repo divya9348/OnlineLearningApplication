@@ -87,4 +87,8 @@ export class AfterLoginComponent {
     this.router.navigate(['/login'])
   }
 
+  ToStartLearn(){
+  this.toastr.success("All Available Course Are In Below! Enroll To Access!");
+  }
+
 }

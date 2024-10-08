@@ -24,8 +24,7 @@ export class ContactComponent {
         console.log(this.contact.fullname)
         console.log(this.contact.email)
         console.log(this.contact.message)
-        this.toastr.success("Data Sent Successfully", "Success");
-        this.router.navigate(['/login']);
+        this.toastr.success("Queries Sent Successfully", "Success");
     },
     error => {
       this.toastr.error("Something Went Wrong!!!", 'Error');
