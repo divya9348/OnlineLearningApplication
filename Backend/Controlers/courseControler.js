@@ -164,6 +164,24 @@ const getProgressForCourse = async (req, res) => {
   }
 };
 
+
+
+
+// Controller function to handle search requests
+const searchCourseControler = async (req, res) => {
+  const keyword = req.query.q || '';  // Get search keyword from query params
+  try {
+      const courses = await courseService.searchCourses(keyword);
+      if (courses.length === 0) {
+          return res.status(404).json({ message: 'No courses found' });
+      }
+      res.json(courses);
+  } catch (error) {
+      res.status(500).json({ message: 'Error searching courses' });
+  }
+};
+
+
 module.exports = {
   createCourse,
   getCourses,
@@ -175,5 +193,6 @@ module.exports = {
   unenrollFromCourse,
   getUserEnrolledCourses,
   updateProgress,
-  getProgressForCourse
+  getProgressForCourse,
+  searchCourseControler
  };

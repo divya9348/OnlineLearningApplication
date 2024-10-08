@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { NetLearnService } from '../../services/net-learn.service';
-import { response } from 'express';
 import { ViewportScroller } from '@angular/common';
 
 @Component({
@@ -83,12 +82,31 @@ export class AfterLoginComponent {
   scrollToSection(section: string) {
     this.viewPortScroller.scrollToAnchor(section);
   }
+  
   navigateToSignIn(){
     this.router.navigate(['/login'])
   }
 
   ToStartLearn(){
   this.toastr.success("All Available Course Are In Below! Enroll To Access!");
+  }
+
+  Category(category: string) {
+    if (category) {
+      // Decode any URL encoding, just in case it's applied (like %20 for spaces)
+      const decodedCategory = decodeURIComponent(category);
+      console.log("decodedCategory:",decodedCategory)
+      this.netLearn.searchByCategory(decodedCategory).subscribe(
+        (response) => {
+          this.courses = response.courses; // Update the courses list with filtered results
+          this.toastr.success(`Courses loaded for ${decodedCategory}`);
+        },
+        (error) => {
+          console.error("Error fetching courses by category", error);
+          this.toastr.error(`Failed to load courses for ${decodedCategory}`);
+        }
+      );
+    }
   }
 
 }

@@ -28,7 +28,7 @@
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                     <input type="search" class="form-control form-control-dark" placeholder="Search..."
-                        aria-label="Search">
+                        aria-label="Search" name="category" [(ngModel)]="category" (ngModelChange)="Category(category)">
                 </form>
 
                 <div class="text-end">
@@ -45,7 +45,7 @@
         <div class="container">
             <h1 class="display-4">Welcome to NETLEARN</h1>
             <p class="lead">Learn anytime, anywhere with our wide variety of courses designed for all learners.</p>
-            <a href="#" class="btn learning-btn  btn-lg">Start Learning Now</a>
+            <a href="#course" class="btn learning-btn  btn-lg">Start Learning Now</a>
         </div>
     </section>
 

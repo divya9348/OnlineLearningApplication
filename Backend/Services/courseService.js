@@ -221,6 +221,31 @@ const getProgressForCourse = async (userId, courseId) => {
   }
 };
 
+
+
+
+
+
+// courseservice.js
+
+// const Course = require('../Models/course'); // Assuming the course model is in the models folder
+
+// Service function to search for courses in the database
+const searchCourseService = async (keyword) => {
+  try {
+      const courses = await Course.find({
+          $or: [
+              { title: { $regex: keyword, $options: 'i' } },      // search by title
+              { description: { $regex: keyword, $options: 'i' } } // search by description
+          ]
+      });
+      return courses;
+  } catch (error) {
+      throw new Error('Error searching for courses');
+  }
+};
+
+
 module.exports = {
   createCourse,
   getAllCourses,
@@ -232,5 +257,6 @@ module.exports = {
   unenrollFromCourse,
   getUserEnrolledCourses,
   updateProgress,
-  getProgressForCourse
+  getProgressForCourse,
+  searchCourseService
 };

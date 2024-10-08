@@ -14,7 +14,7 @@ import { AdminPanelComponent } from './Components/admin-panel/admin-panel.compon
 import { authGuardGuard } from './Guard/auth-guard.guard';
 
 const routes: Routes = [
-  {path:"ho", component:HomepageComponent},  //homepage route...
+  {path:"", component:HomepageComponent},  //homepage route...
   {path:"course",component:CourseComponent},
   { path: 'learn/:courseId', component: LearnCourseComponent },
   {path:'TheAdmin',component:AdminPanelComponent},
