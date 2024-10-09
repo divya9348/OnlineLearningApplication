@@ -11,7 +11,7 @@ import { CourseComponent } from './Components/course/course.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { AboutComponent } from './Components/about/about.component';
 import { ContactComponent } from './Components/contact/contact.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Required for Toastr
@@ -40,6 +40,7 @@ import { AdminPanelComponent } from './Components/admin-panel/admin-panel.compon
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,  // Import BrowserAnimationsModule
     ToastrModule.forRoot({timeOut:3000,positionClass:'toast-top-right'}),

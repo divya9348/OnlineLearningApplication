@@ -122,7 +122,16 @@ button:focus {
 .Account{
     color: white;
 }
-
+.form-control{
+    background-color: transparent;
+}
+::placeholder {
+    color: #8e8e8e; /* Bootstrap's text-secondary (dark gray) */
+    opacity: 1; /* Full opacity */
+}
+.submit{
+    width: 88px;
+}
 .link {
     text-decoration: none;
     color: rgb(255, 251, 0);
