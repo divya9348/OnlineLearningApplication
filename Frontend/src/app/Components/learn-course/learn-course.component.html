@@ -15,15 +15,11 @@
   </div>
 
   <!-- Course Thumbnail -->
-  <div class="row">
+  <div class="row thumbnail-cont">
     <div class="img-div col-12">
       <img [src]="'http://localhost:4000/'+courseDetails.image" alt="Course Thumbnail" class="course-thumbnail img-fluid">
     </div>
-  </div>
-
-  <!-- Course Content -->
-  <div class="row course-content">
-    <div class="col-md-8">
+    <div class="course-details col-md-8">
       <p class="course-description">
         {{ courseDetails.description }}
       </p>
@@ -36,6 +32,23 @@
       </div>
       <p class="mb-3"><strong>Created by:</strong> Divya Ranjan</p>
     </div>
+  </div>
+
+  <!-- Course Content -->
+  <div class="row course-content">
+    <!-- <div class="col-md-8">
+      <p class="course-description">
+        {{ courseDetails.description }}
+      </p>
+      <p class="course-category">
+        <strong>Category:</strong> Web Development
+      </p>
+      <div class="course-tags">
+        <strong>Tags:</strong>
+        <span *ngFor="let tag of courseDetails.tags">{{ tag }}</span>
+      </div>
+      <p class="mb-3"><strong>Created by:</strong> Divya Ranjan</p>
+    </div> -->
 
     <h1 class="head">Lessons</h1>
     <div class="lesson" *ngFor="let lesson of lessons">

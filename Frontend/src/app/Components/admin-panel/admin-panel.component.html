@@ -13,7 +13,7 @@
                 <div class="card-header text-center bg-primary text-white">
                     <h4>Create New Course</h4>
                 </div>
-                <div class="card-body">
+                <div class="card-body createCourse-body">
 
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
@@ -45,14 +45,14 @@
                         <input type="text" class="form-control tag-input" id="tags"
                             placeholder="Enter tags, separated by commas" [(ngModel)]="course.tagsInput"
                             name="tagsInput">
-                        <small class="form-text text-muted">Separate tags with commas (e.g., "Python, Data
+                        <small class="form-text">Separate tags with commas (e.g., "Python, Data
                             Analysis").</small>
                     </div>
 
                     <div class="mb-3">
                         <label for="image" class="form-label">Upload Image</label>
                         <input type="file" class="form-control" id="image" (change)="onImageSelected($event)" name="image" >
-                        <small class="form-text text-muted">Choose an image to represent the course.</small>
+                        <small class="form-text">Choose an image to represent the course.</small>
                     </div>
 
                     <div class="text-center">
@@ -131,7 +131,7 @@
             
         </div>
     </div>
-    <footer class="py-4 bg-dark text-white text-center">
+    <footer class="py-4  text-dark text-center">
         <p>&copy; 2024 NETLEARN. All rights reserved.</p>
     </footer>
 </div>
